@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: hsl(240, 78%, 98%);
+	background-image: url(../images/bg-top.svg),  url(../images/bg-bottom.svg);
+    background-repeat: no-repeat;
+    background-position: top right, bottom left;
+    background-size: 30% 75%, 30% 30%;
+	color: hsl(232, 13%, 33%);
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	min-height: 100vh;
+}
+
+.container {
+	margin: auto;
+	max-width: 100%;
+	width: 1200px;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+h1 {
+	padding-top: 50px;
+	padding-bottom: 30px;
+	color: hsl(233, 13%, 49%);
+}
+
+.togglecontainer {
+	color: hsl(234, 14%, 74%);
+	padding-bottom: 60px;
+}
+
+.pricebox {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	color: hsl(233, 13%, 49%);
+	padding: 30px;
+	margin: 10px;
+}
+
+.pricebox.priceboxpremium {
+	background-image: linear-gradient(
+		to right,
+		hsl(236, 72%, 79%),
+		hsl(237, 63%, 64%)
+	);
+	color: #fff;
+	transform: scale(1.15);
+}
+
+.pricebox.priceboxpremium > * {
+	transform: scale(0.869);
+}
+
+.pricebox h4 {
+	margin: 0;
+}
+
+.pricebox p {
+	color: hsl(232, 13%, 33%);
+	font-size: 4em;
+	margin: 15px 0;
+	width: 250px;
+}
+
+.pricebox .monthly {
+	display: none;
+}
+
+.showmonthly .pricebox .monthly {
+	display: block;
+}
+
+.showmonthly .pricebox .annually {
+	display: none;
+}
+
+.pricebox ul {
+	border-top: 1px solid hsl(234, 14%, 74%);
+	padding: 0;
+	list-style-type: none;
+}
+
+.pricebox ul li {
+	border-bottom: 1px solid hsl(234, 14%, 74%);
+	font-size: 14px;
+	padding: 15px 0;
+}
+
+.pricebox button {
+	background-image: linear-gradient(
+		to right,
+		hsl(236, 72%, 79%),
+		hsl(237, 63%, 64%)
+	);
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 2px;
+	padding: 15px;
+	margin-top: 10px;
+	width: 100%;
+	text-transform: uppercase;
+}
+
+.pricebox.priceboxpremium button {
+	background-image: none;
+	background-color: #fff;
+	color: hsl(237, 63%, 64%);
+}
+
+.learn:hover {
+	background: white;
+    border: 1px solid hsl(234, 14%, 74%);
+    color: hsl(237, 63%, 64%);
+	border-color:hsl(237, 63%, 64%);
+}
+
+.priceboxpremium button:hover {
+	background: transparent;
+    border: 1px solid hsl(234, 14%, 74%);
+	border-color: white;
+    color: white;
+}
+
+
+.pricebox.priceboxpremium ul,
+.pricebox.priceboxpremium ul li {
+	border-color: #f0f0f0;
+}
+.pricebox.priceboxpremium p {
+	color: #fff;
+}
+
+/* Toggle */
+.togglecontainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.togglecontainer label {
+	background-image: linear-gradient(
+		to right,
+		hsl(236, 72%, 79%),
+		hsl(237, 63%, 64%)
+	);
+	border-radius: 50px;
+	cursor: pointer;
+	display: inline-block;
+	margin: 0 10px;
+	position: relative;
+	height: 30px;
+	width: 60px;
+}
+
+.togglecontainer label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 2.5px;
+	left: 2.5px;
+	height: 25px;
+	width: 25px;
+	transition: transform 0.4s ease;
+}
+
+.togglecontainer input {
+	position: absolute;
+	left: -9999px;
+}
+
+.togglecontainer input:checked + label .ball {
+	transform: translateX(30px);
+}
+
+
+.attribution { 
+	padding-top: 50px;
+	font-size: 11px; 
+	text-align: center; 
+}
+
+.attribution a { 
+	color: hsl(228, 45%, 44%); 
+	text-decoration: none;
+}
+ 
+/* Responsiveness */
+@media screen and (max-width: 930px) {
+	h1 {
+		padding-top: 50px;
+		padding-bottom: 10px;
+	}
+
+	.flex {
+		flex-direction: column;
+	}
+
+	.pricebox.priceboxpremium {
+		transform: scale(1);
+	}
+
+	.pricebox.priceboxpremium > * {
+		transform: scale(1);
+	}
+
+	.togglecontainer {
+		padding-top: 20px;
+		padding-bottom: 25px;
+	}
+
+	.attribution { 
+		padding-top: 12px;
+		margin-bottom: 20px;
+	}
+	
+}
